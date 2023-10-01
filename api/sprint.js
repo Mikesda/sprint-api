@@ -1,52 +1,205 @@
 module.exports = async (req, res) => {
-   res.setHeader('Access-Control-Allow-Origin', '*');
-   res.setHeader('Access-Control-Allow-Methods', 'OPTIONS POST');
-   res.setHeader('Content-Type', 'application/json');
-   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "OPTIONS POST");
+  res.setHeader("Content-Type", "application/json");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-   const cpf = req.body.cpf;
-   const contas = [
-        {
-            nome: "Teste 1",
-            cpf: "99999999999",
-            cep: "55555555"
-        },
-        {
-            nome: "Teste 2",
-            cpf: "88888888888",
-            cep: "66666666"
-        }
-   ]
+  const cpf = req.body.cpf;
+  const contas = [
+    {
+      Nome: "João",
+      Valor: 423.56,
+      Data: "2023-06-12",
+      Horario: "14:30",
+      Pagamento: "Cartão de Crédito",
+      Cpf: "12345678910",
+    },
+    {
+      Nome: "João",
+      Valor: 789.21,
+      Data: "2023-02-18",
+      Horario: "10:15",
+      Pagamento: "PIX",
+      Cpf: "12345678910",
+    },
+    {
+      Nome: "João",
+      Valor: 234.75,
+      Data: "2023-09-04",
+      Horario: "19:45",
+      Pagamento: "Dinheiro",
+      Cpf: "12345678910",
+    },
+    {
+      Nome: "João",
+      Valor: 123.89,
+      Data: "2023-07-23",
+      Horario: "16:52",
+      Pagamento: "Cartão de Débito",
+      Cpf: "12345678910",
+    },
+    {
+      Nome: "João",
+      Valor: 567.32,
+      Data: "2023-11-30",
+      Horario: "22:10",
+      Pagamento: "PIX",
+      Cpf: "12345678910",
+    },
+    {
+      Nome: "João",
+      Valor: 312.45,
+      Data: "2023-04-08",
+      Horario: "11:37",
+      Pagamento: "Cartão de Crédito",
+      Cpf: "12345678910",
+    },
+    {
+      Nome: "João",
+      Valor: 654.78,
+      Data: "2023-10-15",
+      Horario: "13:20",
+      Pagamento: "Dinheiro",
+      Cpf: "12345678910",
+    },
+    {
+      Nome: "João",
+      Valor: 189.99,
+      Data: "2023-05-29",
+      Horario: "09:05",
+      Pagamento: "Cartão de Crédito",
+      Cpf: "12345678910",
+    },
+    {
+      Nome: "João",
+      Valor: 456.23,
+      Data: "2023-08-07",
+      Horario: "18:14",
+      Pagamento: "Cartão de Débito",
+      Cpf: "12345678910",
+    },
+    {
+      Nome: "João",
+      Valor: 876.45,
+      Data: "2023-03-17",
+      Horario: "20:40",
+      Pagamento: "Dinheiro",
+      Cpf: "12345678910",
+    },
+    {
+      Nome: "Maria",
+      Valor: 532.12,
+      Data: "2023-06-12",
+      Horario: "14:30",
+      Pagamento: "Cartão de Crédito",
+      Cpf: "10987654321",
+    },
+    {
+      Nome: "Maria",
+      Valor: 987.45,
+      Data: "2023-02-18",
+      Horario: "10:15",
+      Pagamento: "PIX",
+      Cpf: "10987654321",
+    },
+    {
+      Nome: "Maria",
+      Valor: 324.76,
+      Data: "2023-09-04",
+      Horario: "19:45",
+      Pagamento: "Dinheiro",
+      Cpf: "10987654321",
+    },
+    {
+      Nome: "Maria",
+      Valor: 145.67,
+      Data: "2023-07-23",
+      Horario: "16:52",
+      Pagamento: "Cartão de Débito",
+      Cpf: "10987654321",
+    },
+    {
+      Nome: "Maria",
+      Valor: 621.34,
+      Data: "2023-11-30",
+      Horario: "22:10",
+      Pagamento: "PIX",
+      Cpf: "10987654321",
+    },
+    {
+      Nome: "Maria",
+      Valor: 287.89,
+      Data: "2023-04-08",
+      Horario: "11:37",
+      Pagamento: "Cartão de Crédito",
+      Cpf: "10987654321",
+    },
+    {
+      Nome: "Maria",
+      Valor: 765.43,
+      Data: "2023-10-15",
+      Horario: "13:20",
+      Pagamento: "Dinheiro",
+      Cpf: "10987654321",
+    },
+    {
+      Nome: "Maria",
+      Valor: 198.76,
+      Data: "2023-05-29",
+      Horario: "09:05",
+      Pagamento: "Cartão de Crédito",
+      Cpf: "10987654321",
+    },
+    {
+      Nome: "Maria",
+      Valor: 543.21,
+      Data: "2023-08-07",
+      Horario: "18:14",
+      Pagamento: "Cartão de Débito",
+      Cpf: "10987654321",
+    },
+    {
+      Nome: "Maria",
+      Valor: 876.45,
+      Data: "2023-03-17",
+      Horario: "20:40",
+      Pagamento: "Dinheiro",
+      Cpf: "10987654321",
+    },
+  ];
 
-   let body;
-   let cpfExistente;
-   let statusCode;
+  let body;
+  let cpfExistente;
+  let statusCode;
 
-   try {
-        for (let index = 0; index < contas.length; index++) {
-            if (contas[index].cpf == cpf) {
-                body = {
-                    nome: contas[index].nome,
-                    cpf: contas[index].cpf,
-                    cep: contas[index].cep
-                }
-                cpfExistente = true;
-            }
-        }
+  try {
+    body = []
+    for (let index = 0; index < contas.length; index++) {
+      if (contas[index].cpf == cpf) {
+        body.push({
+          nome: contas[index].Nome,
+          valor: contas[index].Valor,
+          data: contas[index].Data,
+          horario: contas[index].Horario,
+          pagamento: contas[index].Pagamento,
+        });
+        cpfExistente = true;
+      }
+    }
 
-        if (!cpfExistente) {
-            body = {
-                message: "Conta com esse CPF não existe"
-            }
-        }
+    if (!cpfExistente) {
+      body = {
+        message: "Conta com esse CPF não existe",
+      };
+    }
 
-        statusCode = 200;
-   } catch (error) {
-        body = {
-            errorMessage: error.message
-        }
-        statusCode = 400;
-   } finally {
-        return res.status(statusCode).json(body)
-   }
-}
+    statusCode = 200;
+  } catch (error) {
+    body = {
+      errorMessage: error.message,
+    };
+    statusCode = 400;
+  } finally {
+    return res.status(statusCode).json(body);
+  }
+};
