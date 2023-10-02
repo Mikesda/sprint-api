@@ -175,7 +175,7 @@ module.exports = async (req, res) => {
   try {
     body = []
     for (let index = 0; index < contas.length; index++) {
-      if (contas[index].cpf == cpf) {
+      if (contas[index].Cpf == cpf) {
         body.push({
           nome: contas[index].Nome,
           valor: contas[index].Valor,
@@ -189,7 +189,7 @@ module.exports = async (req, res) => {
 
     if (!cpfExistente) {
       body = {
-        message: "Conta com esse CPF não existe",
+        message: "Não existe conta cadastrada para este CPF",
       };
     }
 
