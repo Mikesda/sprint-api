@@ -80,7 +80,7 @@ module.exports = async (req, res) => {
     },
     {
       Nome: "João",
-      Valor: 876.45,
+      Valor: 105.57,
       Data: "2023-03-17",
       Horario: "20:40",
       Pagamento: "Dinheiro",
@@ -163,7 +163,7 @@ module.exports = async (req, res) => {
       Valor: 876.45,
       Data: "2023-03-17",
       Horario: "20:40",
-      Pagamento: "Dinheiro",
+      Pagamento: "Cartão de Crédito",
       Cpf: "10987654321",
     },
   ];
