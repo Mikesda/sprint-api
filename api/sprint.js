@@ -167,39 +167,44 @@ module.exports = async (req, res) => {
       Cpf: "10987654321",
     },
     {
-      "Nome": "Maria",
-      "Valor": 732.54,
-      "Data": "2023-08-21",
-      "Horario": "17:42",
-      "Pagamento": "Dinheiro"
+      Nome: "Maria",
+      Valor: 732.54,
+      Data: "2023-08-21",
+      Horario: "17:42",
+      Pagamento: "Dinheiro",
+      Cpf: "10987654321",
     },
     {
-      "Nome": "Maria",
-      "Valor": 265.87,
-      "Data": "2023-01-10",
-      "Horario": "12:15",
-      "Pagamento": "Cartão de Crédito"
+      Nome: "Maria",
+      Valor: 265.87,
+      Data: "2023-01-10",
+      Horario: "12:15",
+      Pagamento: "Cartão de Crédito",
+      Cpf: "10987654321",
     },
     {
-      "Nome": "Maria",
-      "Valor": 156.23,
-      "Data": "2023-05-03",
-      "Horario": "09:58",
-      "Pagamento": "PIX"
+      Nome: "Maria",
+      Valor: 156.23,
+      Data: "2023-05-03",
+      Horario: "09:58",
+      Pagamento: "PIX",
+      Cpf: "10987654321",
     },
     {
-      "Nome": "Maria",
-      "Valor": 874.29,
-      "Data": "2023-09-15",
-      "Horario": "20:03",
-      "Pagamento": "Cartão de Débito"
+      Nome: "Maria",
+      Valor: 874.29,
+      Data: "2023-09-15",
+      Horario: "20:03",
+      Pagamento: "Cartão de Débito",
+      Cpf: "10987654321",
     },
     {
-      "Nome": "Maria",
-      "Valor": 421.67,
-      "Data": "2023-11-05",
-      "Horario": "21:30",
-      "Pagamento": "Dinheiro"
+      Nome: "Maria",
+      Valor: 421.67,
+      Data: "2023-11-05",
+      Horario: "21:30",
+      Pagamento: "Dinheiro",
+      Cpf: "10987654321",
     }
   ];
 
